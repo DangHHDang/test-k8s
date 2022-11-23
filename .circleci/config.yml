@@ -58,16 +58,11 @@ jobs:
             # Build docker image
             docker build -t dangdang511/capstone-proj .
             
-            # Tag docker image
-            docker tag capstone-proj dangdang511/capstone-proj:v1
-            docker tag capstone-proj dangdang511/capstone-proj:lastest
-            
             # Login into docker-hub
             docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
             
             # We push two images with different version tags: given verision and latest
-            docker push dangdang511/capstone-proj:v1
-            docker push dangdang511/capstone-proj:lastest
+            docker push dangdang511/capstone-proj:latest
 
   deploy-infrastructure:
     docker:
