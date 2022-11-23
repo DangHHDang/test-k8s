@@ -187,7 +187,7 @@ workflows:
           requires: [install-and-check-lint]
           filters:
             branches:
-              only: [main]
+              only: [master]
       - deploy-infrastructure:
           requires: [build-and-push-docker-image]
       - deploy-config:
